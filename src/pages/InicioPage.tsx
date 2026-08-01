@@ -1,46 +1,34 @@
 import { Link } from 'react-router-dom';
-import EmptyState from '../components/common/EmptyState';
-import ErrorMessage from '../components/common/ErrorMessage';
-import Loading from '../components/common/Loading';
 
 function InicioPage() {
   return (
     <div className="page">
       <div className="container">
-        <header className="page__header">
-          <p className="page__description">Componentes reutilizables</p>
+        <section className="page__header">
+          <p className="page__description">Tu próxima historia comienza aquí</p>
 
-          <h1 className="page__title">Estados de la aplicación</h1>
+          <h1 className="page__title">Descubre nuevos libros.</h1>
 
           <p className="page__description">
-            Estos componentes serán utilizados en catálogo, carrito, pedidos y
-            pagos.
+            Explora nuestro catálogo, crea tu pedido y realiza tu pago de forma
+            sencilla y segura.
           </p>
-        </header>
+        </section>
 
-        <div
-          style={{
-            display: 'grid',
-            gap: '24px',
-          }}
-        >
-          <Loading message="Consultando libros..." />
+        <section className="surface" style={{ padding: '32px' }}>
+          <h2>Bienvenido a Letra Libre</h2>
 
-          <ErrorMessage
-            message="No fue posible comunicarse con el servidor."
-            onRetry={() => window.alert('Prueba del botón de reintento')}
-          />
+          <p className="page__description">
+            Encuentra libros para aprender, imaginar y disfrutar. El catálogo
+            completo será incorporado por el integrante responsable.
+          </p>
 
-          <EmptyState
-            title="No hay resultados"
-            description="No encontramos información para mostrar."
-            action={
-              <Link className="button button--primary" to="/catalogo">
-                Ir al catálogo
-              </Link>
-            }
-          />
-        </div>
+          <div style={{ marginTop: '24px' }}>
+            <Link className="button button--primary" to="/catalogo">
+              Explorar catálogo
+            </Link>
+          </div>
+        </section>
       </div>
     </div>
   );

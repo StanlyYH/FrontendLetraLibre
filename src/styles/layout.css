@@ -1,0 +1,124 @@
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.app-layout__main {
+  flex: 1;
+}
+
+.header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  min-height: var(--header-height);
+  border-bottom: 1px solid rgba(210, 210, 215, 0.7);
+  background-color: rgba(245, 245, 247, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.header__content {
+  display: flex;
+  min-height: var(--header-height);
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.header__brand {
+  flex-shrink: 0;
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.header__navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header__link {
+  padding: 9px 14px;
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.header__link:hover {
+  background-color: rgba(0, 113, 227, 0.08);
+  color: var(--primary);
+}
+
+.header__link--active {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.header__link--active:hover {
+  background-color: var(--primary-hover);
+  color: #ffffff;
+}
+
+.footer {
+  margin-top: auto;
+  border-top: 1px solid rgba(210, 210, 215, 0.7);
+  background-color: var(--surface);
+}
+
+.footer__content {
+  display: flex;
+  min-height: 96px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 24px;
+}
+
+.footer__text {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 720px) {
+  .header {
+    position: static;
+  }
+
+  .header__content {
+    min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding-block: 16px;
+  }
+
+  .header__brand {
+    text-align: center;
+  }
+
+  .header__navigation {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 2px;
+  }
+
+  .header__link {
+    flex-shrink: 0;
+  }
+
+  .footer__content {
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+  }
+}

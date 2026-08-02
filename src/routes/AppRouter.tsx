@@ -4,6 +4,7 @@ import InicioPage from '../pages/InicioPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import PaginaTemporal from '../pages/PaginaTemporal';
 import PaginaCatalogo from '../pages/PaginaCatalogo';
+import CarritoPruebaPage from '../pages/CarritoPruebaPage';
 
 function AppRouter() {
   return (
@@ -13,7 +14,9 @@ function AppRouter() {
           <Route index element={<InicioPage />} />
 
           <Route
-            path="/catalogo" element={<PaginaCatalogo/>}/>
+            path="/catalogo" 
+            element={<PaginaCatalogo/>}
+          />
 
           <Route
             path="/libros/:id"
@@ -26,13 +29,8 @@ function AppRouter() {
           />
 
           <Route
-            path="/carrito"
-            element={
-              <PaginaTemporal
-                title="Carrito"
-                description="Revisa los libros agregados antes de continuar."
-              />
-            }
+              path="/carrito"
+              element={<CarritoPruebaPage />}
           />
 
           <Route

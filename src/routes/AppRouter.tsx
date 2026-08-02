@@ -3,6 +3,7 @@ import Layout from '../components/layout/Layout';
 import InicioPage from '../pages/InicioPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import PaginaTemporal from '../pages/PaginaTemporal';
+import PagoCanceladoPage from '../pages/PagoCanceladoPage';
 import PagoExitosoPage from '../pages/PagoExitosoPage';
 import PagoPage from '../pages/PagoPage';
 
@@ -82,12 +83,7 @@ function AppRouter() {
 
           <Route
             path="/pago-cancelado"
-            element={
-              <PaginaTemporal
-                title="Pago cancelado"
-                description="El pago fue cancelado y el carrito permanece disponible."
-              />
-            }
+            element={<PagoCanceladoPage />}
           />
 
           <Route path="*" element={<NotFoundPage />} />

@@ -97,7 +97,9 @@ function PagoPage() {
       const respuesta = await crearSesionPago({
         pedidoId: pedido.id,
         urlExito: `${window.location.origin}/pago-exitoso`,
-        urlCancelacion: `${window.location.origin}/pago-cancelado`,
+        urlCancelacion: `${window.location.origin}/pago-cancelado?pedidoId=${encodeURIComponent(
+  pedido.id,
+)}`,
       });
 
       if (!respuesta.status || !respuesta.data?.urlPago) {

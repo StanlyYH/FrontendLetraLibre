@@ -4,7 +4,7 @@ import InicioPage from '../pages/InicioPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import PaginaTemporal from '../pages/PaginaTemporal';
 import PaginaCatalogo from '../pages/PaginaCatalogo';
-import CarritoPruebaPage from '../pages/CarritoPruebaPage';
+import CarritoPage from '../pages/CarritoPage';
 
 function AppRouter() {
   return (
@@ -30,7 +30,7 @@ function AppRouter() {
 
           <Route
               path="/carrito"
-              element={<CarritoPruebaPage />}
+              element={<CarritoPage />}
           />
 
           <Route

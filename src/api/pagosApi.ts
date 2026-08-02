@@ -1,10 +1,23 @@
 import apiClient from './apiClient';
 import type { ApiResponse } from '../types/api.types';
 import type {
+  PedidoParaPago,
   ResultadoPago,
   SesionPago,
   SolicitudPago,
 } from '../types/pago.types';
+
+export async function obtenerPedidoParaPago(
+  pedidoId: string,
+): Promise<ApiResponse<PedidoParaPago>> {
+  const pedidoIdSeguro = encodeURIComponent(pedidoId);
+
+  const response = await apiClient.get<ApiResponse<PedidoParaPago>>(
+    `/api/pedidos/${pedidoIdSeguro}`,
+  );
+
+  return response.data;
+}
 
 export async function crearSesionPago(
   solicitud: SolicitudPago,

@@ -1,11 +1,8 @@
-import type { EstadoPago } from '../../types/pago.types';
+import type {
+  DetallePedidoPago,
+  EstadoPago,
+} from '../../types/pago.types';
 import PagoEstado from './PagoEstado';
-
-interface DetallePedidoResumen {
-  libroId: string;
-  cantidad: number;
-  precioUnitario: number;
-}
 
 interface PagoResumenProps {
   pedidoId: string;
@@ -14,7 +11,7 @@ interface PagoResumenProps {
   estadoPago: EstadoPago;
   montoTotal: number;
   costoEnvio: number;
-  detallesPedido: DetallePedidoResumen[];
+  detallesPedido: DetallePedidoPago[];
 }
 
 function formatearMonto(monto: number): string {

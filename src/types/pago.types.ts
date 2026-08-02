@@ -28,3 +28,23 @@ export interface ResultadoPago {
   referenciaPago: string;
   fechaPago: string | null;
 }
+
+export interface DetallePedidoPago {
+  libroId: string;
+  cantidad: number;
+  precioUnitario: number;
+}
+
+export interface PedidoParaPago {
+  id: string;
+  nombreCliente: string;
+  correoCliente: string;
+  estadoPago: EstadoPago;
+  montoTotal: number;
+  referenciaPago: string;
+  usuarioId: string;
+  departamentoEnvio: string;
+  direccionEnvio: string;
+  costoEnvio: number;
+  detallesPedido: DetallePedidoPago[];
+}

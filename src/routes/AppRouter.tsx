@@ -3,6 +3,7 @@ import Layout from '../components/layout/Layout';
 import InicioPage from '../pages/InicioPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import PaginaTemporal from '../pages/PaginaTemporal';
+import PaginaCatalogo from '../pages/PaginaCatalogo';
 
 function AppRouter() {
   return (
@@ -12,14 +13,7 @@ function AppRouter() {
           <Route index element={<InicioPage />} />
 
           <Route
-            path="/catalogo"
-            element={
-              <PaginaTemporal
-                title="Catálogo"
-                description="Explora todos los libros disponibles en Letra Libre."
-              />
-            }
-          />
+            path="/catalogo" element={<PaginaCatalogo/>}/>
 
           <Route
             path="/libros/:id"

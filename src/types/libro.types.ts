@@ -9,6 +9,6 @@ export interface Libro {
     precio: number;
     stock: number;
     descripcion: string;
-    imageUrl: string;
+    imagenUrl?: string;
 }
 

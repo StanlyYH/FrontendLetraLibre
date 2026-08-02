@@ -3,6 +3,7 @@ import Layout from '../components/layout/Layout';
 import InicioPage from '../pages/InicioPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import PaginaTemporal from '../pages/PaginaTemporal';
+import PagoExitosoPage from '../pages/PagoExitosoPage';
 import PagoPage from '../pages/PagoPage';
 
 function AppRouter() {
@@ -76,12 +77,7 @@ function AppRouter() {
 
           <Route
             path="/pago-exitoso"
-            element={
-              <PaginaTemporal
-                title="Confirmando pago"
-                description="Estamos verificando el resultado del pago con el servidor."
-              />
-            }
+            element={<PagoExitosoPage />}
           />
 
           <Route

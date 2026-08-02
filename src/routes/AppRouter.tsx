@@ -3,6 +3,7 @@ import Layout from '../components/layout/Layout';
 import InicioPage from '../pages/InicioPage';
 import NotFoundPage from '../pages/NotFoundPage';
 import PaginaTemporal from '../pages/PaginaTemporal';
+import PagoPage from '../pages/PagoPage';
 
 function AppRouter() {
   return (
@@ -71,15 +72,7 @@ function AppRouter() {
             }
           />
 
-          <Route
-            path="/pago/:pedidoId"
-            element={
-              <PaginaTemporal
-                title="Realizar pago"
-                description="Revisa el resumen y continúa con el pago seguro."
-              />
-            }
-          />
+          <Route path="/pago/:pedidoId" element={<PagoPage />} />
 
           <Route
             path="/pago-exitoso"

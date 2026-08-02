@@ -1,0 +1,50 @@
+.pago-page__contenido {
+  display: grid;
+  gap: 24px;
+}
+
+.pago-page__acciones {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 28px 32px;
+}
+
+.pago-page__acciones-titulo {
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.pago-page__acciones-descripcion {
+  max-width: 620px;
+  margin-bottom: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.pago-page__botones {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 760px) {
+  .pago-page__acciones {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px;
+  }
+
+  .pago-page__botones {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .pago-page__botones .button {
+    width: 100%;
+  }
+}

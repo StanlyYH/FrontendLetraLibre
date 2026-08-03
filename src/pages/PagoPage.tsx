@@ -77,7 +77,13 @@ function PagoPage() {
   }, [pedidoId]);
 
   useEffect(() => {
-    void cargarPedido();
+    const timeoutId = window.setTimeout(() => {
+      void cargarPedido();
+    }, 0);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
   }, [cargarPedido]);
 
   const iniciarPago = async () => {

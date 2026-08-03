@@ -442,6 +442,16 @@ function DetallePedidoPage() {
                 </div>
               )}
 
+              {pedido.estadoPago.toLowerCase() ===
+                'pendiente' && (
+                <Link
+                  className="button button--primary"
+                  to={`/pago/${pedido.id}`}
+                >
+                  Continuar con el pago
+                </Link>
+              )}
+
               <Link
                 className="button button--secondary"
                 to="/pedidos"

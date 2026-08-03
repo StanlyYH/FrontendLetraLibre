@@ -29,7 +29,6 @@ function CheckoutPage() {
     subtotal,
     cantidadTotal,
     estaVacio,
-    vaciarCarrito,
   } = useCarrito();
 
   const [nombreCliente, setNombreCliente] = useState('');
@@ -99,13 +98,7 @@ function CheckoutPage() {
 
       const pedidoCreado = respuesta.data;
 
-      vaciarCarrito();
-
-      navigate(`/pedidos/${pedidoCreado.id}`, {
-        state: {
-          pedidoCreado,
-        },
-      });
+      navigate(`/pago/${pedidoCreado.id}`);
     } catch (errorDesconocido) {
       const mensaje =
         errorDesconocido instanceof Error

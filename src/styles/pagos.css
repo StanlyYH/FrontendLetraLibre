@@ -1,0 +1,285 @@
+.pago-estado {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pago-estado--pendiente {
+  background-color: rgba(255, 149, 0, 0.12);
+  color: #a85f00;
+}
+
+.pago-estado--pagado {
+  background-color: rgba(52, 199, 89, 0.12);
+  color: #187c31;
+}
+
+.pago-estado--fallido {
+  background-color: rgba(255, 59, 48, 0.12);
+  color: #b42318;
+}
+
+.pago-estado--cancelado {
+  background-color: rgba(110, 110, 115, 0.12);
+  color: var(--text-secondary);
+}
+
+/* Resumen previo al pago */
+
+.pago-resumen {
+  overflow: hidden;
+}
+
+.pago-resumen__encabezado {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pago-resumen__etiqueta {
+  margin-bottom: 6px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.pago-resumen__titulo {
+  margin-bottom: 8px;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  letter-spacing: -0.03em;
+}
+
+.pago-resumen__id {
+  overflow-wrap: anywhere;
+  margin-bottom: 0;
+  color: var(--text-secondary);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    monospace;
+  font-size: 0.85rem;
+}
+
+.pago-resumen__cliente {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  padding: 24px 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pago-resumen__cliente > div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pago-resumen__cliente strong {
+  overflow-wrap: anywhere;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.pago-resumen__campo-etiqueta {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.pago-resumen__productos {
+  padding: 28px 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pago-resumen__subtitulo {
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  font-size: 1.15rem;
+}
+
+.pago-resumen__mensaje {
+  margin-bottom: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.pago-resumen__lista {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pago-resumen__producto {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px;
+  border: 1px solid rgba(210, 210, 215, 0.75);
+  border-radius: var(--radius-medium);
+  background-color: var(--background);
+}
+
+.pago-resumen__producto-informacion {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.pago-resumen__producto-id {
+  overflow-wrap: anywhere;
+  color: var(--text-secondary);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    monospace;
+  font-size: 0.78rem;
+}
+
+.pago-resumen__producto-cantidad {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.pago-resumen__producto-total {
+  flex-shrink: 0;
+  color: var(--text-primary);
+}
+
+.pago-resumen__totales {
+  display: grid;
+  gap: 14px;
+  padding: 28px 32px 32px;
+}
+
+.pago-resumen__total-fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: var(--text-secondary);
+}
+
+.pago-resumen__total-fila strong {
+  color: var(--text-primary);
+}
+
+.pago-resumen__total-fila--principal {
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: 1.15rem;
+}
+
+.pago-resumen__total-fila--principal strong {
+  color: var(--primary);
+  font-size: 1.35rem;
+}
+
+/* Resultado después de confirmar el pago */
+
+.pago-resultado {
+  padding: 32px;
+}
+
+.pago-resultado__encabezado {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pago-resultado__etiqueta {
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.pago-resultado__titulo {
+  margin-bottom: 0;
+  color: var(--text-primary);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  letter-spacing: -0.03em;
+}
+
+.pago-resultado__datos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding-top: 24px;
+}
+
+.pago-resultado__dato {
+  min-width: 0;
+}
+
+.pago-resultado__dato dt {
+  margin-bottom: 6px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.pago-resultado__dato dd {
+  overflow-wrap: anywhere;
+  margin: 0;
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+@media (max-width: 640px) {
+  .pago-resumen__encabezado {
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+  }
+
+  .pago-resumen__cliente {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 22px 24px;
+  }
+
+  .pago-resumen__productos {
+    padding: 24px;
+  }
+
+  .pago-resumen__producto {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .pago-resumen__producto-total {
+    align-self: flex-end;
+  }
+
+  .pago-resumen__totales {
+    padding: 24px;
+  }
+
+  .pago-resultado {
+    padding: 24px;
+  }
+
+  .pago-resultado__encabezado {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .pago-resultado__datos {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

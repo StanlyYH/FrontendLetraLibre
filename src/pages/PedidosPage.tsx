@@ -194,6 +194,9 @@ function PedidosPage() {
               0,
             );
 
+            const pagoPendiente =
+              pedido.estadoPago.toLowerCase() === 'pendiente';
+
             return (
               <article
                 className="surface"
@@ -304,6 +307,15 @@ function PedidosPage() {
                   >
                     Ver detalle
                   </Link>
+
+                  {pagoPendiente && (
+                    <Link
+                      className="button button--primary"
+                      to={`/pago/${pedido.id}`}
+                    >
+                      Pagar ahora
+                    </Link>
+                  )}
                 </div>
               </article>
             );

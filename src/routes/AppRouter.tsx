@@ -1,14 +1,21 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import Layout from '../components/layout/Layout';
+
 import InicioPage from '../pages/InicioPage';
 import NotFoundPage from '../pages/NotFoundPage';
-import PaginaTemporal from '../pages/PaginaTemporal';
+
 import PaginaCatalogo from '../pages/PaginaCatalogo';
+import PaginaDetalleLibro from '../pages/PaginaDetalleLibro';
+
 import CarritoPage from '../pages/CarritoPage';
 import CheckoutPage from '../pages/CheckoutPage';
-import DetallePedidoPage from '../pages/DetallePedidoPage';
 import PedidosPage from '../pages/PedidosPage';
-import PaginaDetalleLibro from '../pages/PaginaDetalleLibro';
+import DetallePedidoPage from '../pages/DetallePedidoPage';
+
+import PagoPage from '../pages/PagoPage';
+import PagoExitosoPage from '../pages/PagoExitosoPage';
+import PagoCanceladoPage from '../pages/PagoCanceladoPage';
 
 function AppRouter() {
   return (
@@ -18,18 +25,18 @@ function AppRouter() {
           <Route index element={<InicioPage />} />
 
           <Route
-            path="/catalogo" 
-            element={<PaginaCatalogo/>}
+            path="/catalogo"
+            element={<PaginaCatalogo />}
           />
 
           <Route
             path="/libros/:id"
-            element={<PaginaDetalleLibro/>}
+            element={<PaginaDetalleLibro />}
           />
 
           <Route
-              path="/carrito"
-              element={<CarritoPage />}
+            path="/carrito"
+            element={<CarritoPage />}
           />
 
           <Route
@@ -49,32 +56,17 @@ function AppRouter() {
 
           <Route
             path="/pago/:pedidoId"
-            element={
-              <PaginaTemporal
-                title="Realizar pago"
-                description="Revisa el resumen y continúa con el pago seguro."
-              />
-            }
+            element={<PagoPage />}
           />
 
           <Route
             path="/pago-exitoso"
-            element={
-              <PaginaTemporal
-                title="Confirmando pago"
-                description="Estamos verificando el resultado del pago con el servidor."
-              />
-            }
+            element={<PagoExitosoPage />}
           />
 
           <Route
             path="/pago-cancelado"
-            element={
-              <PaginaTemporal
-                title="Pago cancelado"
-                description="El pago fue cancelado y el carrito permanece disponible."
-              />
-            }
+            element={<PagoCanceladoPage />}
           />
 
           <Route path="*" element={<NotFoundPage />} />

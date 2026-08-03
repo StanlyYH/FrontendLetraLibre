@@ -6,6 +6,7 @@ import { CarritoProvider } from './context/CarritoContext';
 
 import './styles/global.css';
 import './styles/common.css';
+import './styles/pagos.css';
 
 const rootElement = document.getElementById('root');
 

@@ -1,0 +1,150 @@
+.pago-page__contenido,
+.pago-exitoso__contenido {
+  display: grid;
+  gap: 24px;
+}
+
+.pago-page__acciones {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 28px 32px;
+}
+
+.pago-page__acciones-titulo {
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.pago-page__acciones-descripcion {
+  max-width: 620px;
+  margin-bottom: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.pago-page__botones {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 12px;
+}
+
+.pago-exitoso__acciones {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 24px 32px;
+}
+
+.pago-exitoso__contenido .pago-exitoso__acciones {
+  margin-top: 0;
+}
+
+@media (max-width: 760px) {
+  .pago-page__acciones {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px;
+  }
+
+  .pago-page__botones {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .pago-page__botones .button {
+    width: 100%;
+  }
+
+  .pago-exitoso__acciones {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    padding: 24px;
+  }
+
+  .pago-exitoso__acciones .button {
+    width: 100%;
+  }
+  
+  .pago-cancelado {
+  max-width: 760px;
+  margin-inline: auto;
+  padding: 48px;
+  text-align: center;
+}
+
+.pago-cancelado__icono {
+  display: flex;
+  width: 64px;
+  height: 64px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background-color: rgba(255, 149, 0, 0.12);
+  color: var(--warning);
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.pago-cancelado__etiqueta {
+  margin-bottom: 8px;
+  color: var(--warning);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.pago-cancelado__titulo {
+  margin-bottom: 16px;
+  color: var(--text-primary);
+  font-size: clamp(2rem, 6vw, 3rem);
+  letter-spacing: -0.04em;
+}
+
+.pago-cancelado__descripcion {
+  max-width: 580px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.pago-cancelado__pedido {
+  overflow-wrap: anywhere;
+  margin: 24px 0 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.pago-cancelado__pedido strong {
+  color: var(--text-primary);
+}
+
+.pago-cancelado__acciones {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+@media (max-width: 640px) {
+  .pago-cancelado {
+    padding: 32px 24px;
+  }
+
+  .pago-cancelado__acciones {
+    flex-direction: column-reverse;
+  }
+
+  .pago-cancelado__acciones .button {
+    width: 100%;
+  }
+}
+}

@@ -17,7 +17,8 @@ interface PagoResumenProps {
 function formatearMonto(monto: number): string {
   return new Intl.NumberFormat('es-HN', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'HNL',
+    minimumFractionDigits: 2,
   }).format(monto);
 }
 

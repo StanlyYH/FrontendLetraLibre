@@ -5,6 +5,7 @@ import ErrorMessage from '../components/common/ErrorMessage';
 import Loading from '../components/common/Loading';
 import PagoResultado from '../components/pagos/PagoResultado';
 import { confirmarPago } from '../api/pagosApi';
+import { useCarrito } from '../hooks/useCarrito';
 import type { ApiResponse } from '../types/api.types';
 import type { ResultadoPago } from '../types/pago.types';
 
@@ -30,6 +31,7 @@ function obtenerMensajeError(
 function PagoExitosoPage() {
   const [searchParams] = useSearchParams();
   const sessionId = searchParams.get('session_id');
+  const { vaciarCarrito } = useCarrito();
 
   const [resultado, setResultado] = useState<ResultadoPago | null>(null);
   const [cargando, setCargando] = useState(true);
@@ -60,16 +62,9 @@ function PagoExitosoPage() {
 
       setResultado(respuesta.data);
 
-      /*
-       * El carrito se limpiará durante la integración final.
-       *
-       * No debemos adivinar el nombre de la función creada por Derick.
-       * La condición correcta será:
-       *
-       * if (respuesta.data.pagoCompletado) {
-       *   vaciarCarrito();
-       * }
-       */
+      if (respuesta.data.pagoCompletado) {
+        vaciarCarrito();
+      }
     } catch (errorConfirmacion) {
       setResultado(null);
       setError(
@@ -81,7 +76,7 @@ function PagoExitosoPage() {
     } finally {
       setCargando(false);
     }
-  }, [sessionId]);
+  }, [sessionId, vaciarCarrito]);
 
   useEffect(() => {
     void verificarPago();

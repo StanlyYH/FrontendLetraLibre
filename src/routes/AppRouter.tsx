@@ -1,11 +1,21 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import Layout from '../components/layout/Layout';
+
 import InicioPage from '../pages/InicioPage';
 import NotFoundPage from '../pages/NotFoundPage';
-import PaginaTemporal from '../pages/PaginaTemporal';
-import PagoCanceladoPage from '../pages/PagoCanceladoPage';
-import PagoExitosoPage from '../pages/PagoExitosoPage';
+
+import PaginaCatalogo from '../pages/PaginaCatalogo';
+import PaginaDetalleLibro from '../pages/PaginaDetalleLibro';
+
+import CarritoPage from '../pages/CarritoPage';
+import CheckoutPage from '../pages/CheckoutPage';
+import PedidosPage from '../pages/PedidosPage';
+import DetallePedidoPage from '../pages/DetallePedidoPage';
+
 import PagoPage from '../pages/PagoPage';
+import PagoExitosoPage from '../pages/PagoExitosoPage';
+import PagoCanceladoPage from '../pages/PagoCanceladoPage';
 
 function AppRouter() {
   return (
@@ -16,65 +26,38 @@ function AppRouter() {
 
           <Route
             path="/catalogo"
-            element={
-              <PaginaTemporal
-                title="Catálogo"
-                description="Explora todos los libros disponibles en Letra Libre."
-              />
-            }
+            element={<PaginaCatalogo />}
           />
 
           <Route
             path="/libros/:id"
-            element={
-              <PaginaTemporal
-                title="Detalle del libro"
-                description="Consulta la información completa del libro seleccionado."
-              />
-            }
+            element={<PaginaDetalleLibro />}
           />
 
           <Route
             path="/carrito"
-            element={
-              <PaginaTemporal
-                title="Carrito"
-                description="Revisa los libros agregados antes de continuar."
-              />
-            }
+            element={<CarritoPage />}
           />
 
           <Route
             path="/checkout"
-            element={
-              <PaginaTemporal
-                title="Finalizar pedido"
-                description="Completa los datos necesarios para crear tu pedido."
-              />
-            }
+            element={<CheckoutPage />}
           />
 
           <Route
             path="/pedidos"
-            element={
-              <PaginaTemporal
-                title="Pedidos"
-                description="Consulta el historial de pedidos registrados."
-              />
-            }
+            element={<PedidosPage />}
           />
 
           <Route
             path="/pedidos/:id"
-            element={
-              <PaginaTemporal
-                title="Detalle del pedido"
-                description="Consulta los productos, totales y estado del pedido."
-              />
-            }
+            element={<DetallePedidoPage />}
           />
 
-          <Route path="/pago/:pedidoId" element={<PagoPage />} />
+          <Route
+            path="/pago/:pedidoId"
+            element={<PagoPage />}
+          />
 
           <Route
             path="/pago-exitoso"

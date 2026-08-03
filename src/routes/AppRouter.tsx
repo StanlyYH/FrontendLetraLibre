@@ -6,6 +6,8 @@ import PaginaTemporal from '../pages/PaginaTemporal';
 import PaginaCatalogo from '../pages/PaginaCatalogo';
 import CarritoPage from '../pages/CarritoPage';
 import CheckoutPage from '../pages/CheckoutPage';
+import DetallePedidoPage from '../pages/DetallePedidoPage';
+import PedidosPage from '../pages/PedidosPage';
 
 function AppRouter() {
   return (
@@ -41,22 +43,12 @@ function AppRouter() {
 
           <Route
             path="/pedidos"
-            element={
-              <PaginaTemporal
-                title="Pedidos"
-                description="Consulta el historial de pedidos registrados."
-              />
-            }
+            element={<PedidosPage />}
           />
 
           <Route
             path="/pedidos/:id"
-            element={
-              <PaginaTemporal
-                title="Detalle del pedido"
-                description="Consulta los productos, totales y estado del pedido."
-              />
-            }
+            element={<DetallePedidoPage />}
           />
 
           <Route

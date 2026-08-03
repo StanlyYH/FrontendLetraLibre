@@ -23,18 +23,38 @@ function PaginaDetalleLibro() {
   const [agregado, setAgregado] = useState(false);
 
   useEffect(() => {
-    if (!id) {
-      setError('No se recibió el identificador del libro.');
-      setCargando(false);
-      return;
-    }
+    let consultaCancelada = false;
 
-    setCargando(true);
-    setError(null);
-    setAgregado(false);
+    const cargarLibro = async (): Promise<void> => {
+      // Evita actualizar estado de forma síncrona
+      // durante la ejecución inicial del efecto.
+      await Promise.resolve();
 
-    obtenerLibroPorId(id)
-      .then((respuesta) => {
+      if (consultaCancelada) {
+        return;
+      }
+
+      if (!id) {
+        setLibro(null);
+        setError(
+          'No se recibió el identificador del libro.',
+        );
+        setCargando(false);
+        return;
+      }
+
+      setCargando(true);
+      setError(null);
+      setAgregado(false);
+      setImagenConError(false);
+
+      try {
+        const respuesta = await obtenerLibroPorId(id);
+
+        if (consultaCancelada) {
+          return;
+        }
+
         if (!respuesta.status || !respuesta.data) {
           throw new Error(
             respuesta.message ||
@@ -43,8 +63,11 @@ function PaginaDetalleLibro() {
         }
 
         setLibro(respuesta.data);
-      })
-      .catch((errorDesconocido: unknown) => {
+      } catch (errorDesconocido: unknown) {
+        if (consultaCancelada) {
+          return;
+        }
+
         const mensaje =
           errorDesconocido instanceof Error
             ? errorDesconocido.message
@@ -52,10 +75,18 @@ function PaginaDetalleLibro() {
 
         setLibro(null);
         setError(mensaje);
-      })
-      .finally(() => {
-        setCargando(false);
-      });
+      } finally {
+        if (!consultaCancelada) {
+          setCargando(false);
+        }
+      }
+    };
+
+    void cargarLibro();
+
+    return () => {
+      consultaCancelada = true;
+    };
   }, [id]);
 
   const agregarLibroAlCarrito = (): void => {

@@ -38,9 +38,6 @@ function PaginaCatalogo() {
   useEffect(() => {
     let consultaCancelada = false;
 
-    setCargando(true);
-    setError(null);
-
     obtenerLibros(
       criterios.termino,
       criterios.pagina,
@@ -107,6 +104,9 @@ function PaginaCatalogo() {
   ): void => {
     event.preventDefault();
 
+    setCargando(true);
+    setError(null);
+
     setCriterios({
       termino: textoBusqueda.trim(),
       pagina: 1,
@@ -114,6 +114,8 @@ function PaginaCatalogo() {
   };
 
   const limpiarBusqueda = (): void => {
+    setCargando(true);
+    setError(null);
     setTextoBusqueda('');
 
     setCriterios({
@@ -126,6 +128,9 @@ function PaginaCatalogo() {
     if (pagina < 1 || pagina > totalPaginas) {
       return;
     }
+
+    setCargando(true);
+    setError(null);
 
     setCriterios((criteriosActuales) => ({
       ...criteriosActuales,
@@ -254,11 +259,14 @@ function PaginaCatalogo() {
           <button
             className="button button--primary common-state__action"
             type="button"
-            onClick={() =>
+            onClick={() => {
+              setCargando(true);
+              setError(null);
+
               setCriterios((criteriosActuales) => ({
                 ...criteriosActuales,
-              }))
-            }
+              }));
+            }}
           >
             Intentar nuevamente
           </button>

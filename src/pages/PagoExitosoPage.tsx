@@ -79,7 +79,13 @@ function PagoExitosoPage() {
   }, [sessionId, vaciarCarrito]);
 
   useEffect(() => {
-    void verificarPago();
+    const timeoutId = window.setTimeout(() => {
+      void verificarPago();
+    }, 0);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+    };
   }, [verificarPago]);
 
   if (cargando) {

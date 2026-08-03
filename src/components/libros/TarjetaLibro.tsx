@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { Libro } from "../../types";
 import { Link } from "react-router-dom";
 import '../../styles/libros.css'; 
+import { formateadorPrecio } from "./formato";
 
 
 interface PropiedadesTarjetaLibro{
@@ -9,10 +10,6 @@ interface PropiedadesTarjetaLibro{
     alAgregarCarrito?: (libro: Libro) => void;
 }
 
-const formateadorPrecio = new Intl.NumberFormat('es-Hn',{
-    style: 'currency',
-    currency: 'HNL',
-});
 
 export function TarjetaLibro({libro, alAgregarCarrito,}: PropiedadesTarjetaLibro){
     const[imagenConError, setImagenConError] = useState(false);

@@ -8,6 +8,7 @@ import CarritoPage from '../pages/CarritoPage';
 import CheckoutPage from '../pages/CheckoutPage';
 import DetallePedidoPage from '../pages/DetallePedidoPage';
 import PedidosPage from '../pages/PedidosPage';
+import PaginaDetalleLibro from '../pages/PaginaDetalleLibro';
 
 function AppRouter() {
   return (
@@ -23,12 +24,7 @@ function AppRouter() {
 
           <Route
             path="/libros/:id"
-            element={
-              <PaginaTemporal
-                title="Detalle del libro"
-                description="Consulta la información completa del libro seleccionado."
-              />
-            }
+            element={<PaginaDetalleLibro/>}
           />
 
           <Route

@@ -1,1 +1,2 @@
-export * from '../../api/librosApi';
+export * from './formato';
+export * from './TarjetaLibro';

@@ -5,6 +5,7 @@ import NotFoundPage from '../pages/NotFoundPage';
 import PaginaTemporal from '../pages/PaginaTemporal';
 import PaginaCatalogo from '../pages/PaginaCatalogo';
 import CarritoPage from '../pages/CarritoPage';
+import CheckoutPage from '../pages/CheckoutPage';
 
 function AppRouter() {
   return (
@@ -35,12 +36,7 @@ function AppRouter() {
 
           <Route
             path="/checkout"
-            element={
-              <PaginaTemporal
-                title="Finalizar pedido"
-                description="Completa los datos necesarios para crear tu pedido."
-              />
-            }
+            element={<CheckoutPage />}
           />
 
           <Route

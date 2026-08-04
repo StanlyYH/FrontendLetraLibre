@@ -30,7 +30,24 @@ function Header() {
     <header className="header">
       <div className="container header__content">
         <NavLink className="header__brand" to="/">
-          Letra Libre
+          <svg
+            className="header__brand-icon"
+            viewBox="0 0 64 64"
+            aria-hidden="true"
+          >
+            <rect width="64" height="64" rx="14" fill="currentColor" />
+            <path
+              d="M32 20c-4.5-3.2-10.5-4.2-16-3v26c5.5-1.2 11.5-0.2 16 3
+                 4.5-3.2 10.5-4.2 16-3V17c-5.5-1.2-11.5-0.2-16 3z"
+              fill="none"
+              stroke="#ffffff"
+              strokeWidth="4"
+              strokeLinejoin="round"
+            />
+            <line x1="32" y1="20" x2="32" y2="46" stroke="#ffffff" strokeWidth="4" />
+          </svg>
+
+          <span>Letra Libre</span>
         </NavLink>
 
         <nav
